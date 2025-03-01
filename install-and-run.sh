@@ -9,7 +9,7 @@ service ssh start
 echo "SSH server has started"
 
 # Скопировать бенчмарк
-mkdir behcn
+mkdir bench
 cd bench
 wget https://raw.githubusercontent.com/Andrey36652/gpu-provider-eval/refs/heads/master/bench.py
 
