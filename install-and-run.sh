@@ -1,6 +1,6 @@
 # начать с образа debian:12
 # находимся в домашней директории пользователя (/root)
-apt-get update && apt-get install wget net-tools openssh-server -y
+apt-get update && apt-get install wget net-tools openssh-server nano nvtop tmux -y
 
 # Настроить доступ по SSH по публичному ключу
 mkdir -p ~/.ssh
