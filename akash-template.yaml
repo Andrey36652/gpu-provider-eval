@@ -1,0 +1,48 @@
+---
+version: "2.0"
+services:
+  app:
+    image: debian:12
+    expose:
+      - port: 22 # доступ по SSH по публичному ключу (без пароля)
+        as: 22
+        to:
+          - global: true
+      - port: 80
+        as: 80
+        to:
+          - global: true
+    command:
+      - bash
+      - "-c"
+      - "apt-get update && apt-get install wget -y && cd ~ && wget https://raw.githubusercontent.com/Andrey36652/gpu-provider-eval/main/install-and-run.sh && source install-and-run.sh"
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 4
+        memory:
+          size: 60Gi
+        storage:
+          - size: 120Gi
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: rtxa6000
+                - model: a100
+                - model: h100
+                #- model: rtx4090
+  placement:
+    akash:
+      pricing:
+        app:
+          denom: uakt
+          amount: 1000000
+deployment:
+  app:
+    akash:
+      profile: app
+      count: 1
