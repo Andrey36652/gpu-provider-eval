@@ -34,6 +34,8 @@ profiles:
                 - model: rtxa6000
                 - model: a100
                 - model: h100
+                  ram: 80Gi
+                  interface: sxm
                 #- model: rtx4090
   placement:
     akash:
