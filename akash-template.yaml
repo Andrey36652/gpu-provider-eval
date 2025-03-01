@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   app:
-    image: debian:12
+    image: pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel
     expose:
       - port: 22 # доступ по SSH по публичному ключу (без пароля)
         as: 22
