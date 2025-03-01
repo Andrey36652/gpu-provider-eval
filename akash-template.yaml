@@ -15,7 +15,7 @@ services:
     command:
       - bash
       - "-c"
-      - "apt-get update && apt-get install wget -y && cd ~ && wget https://raw.githubusercontent.com/Andrey36652/gpu-provider-eval/main/install-and-run.sh && source install-and-run.sh"
+      - "apt-get update && apt-get install wget -y && cd ~ && wget https://raw.githubusercontent.com/Andrey36652/gpu-provider-eval/refs/heads/master/install-and-run.sh && source install-and-run.sh"
 profiles:
   compute:
     app:
