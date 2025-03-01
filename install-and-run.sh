@@ -8,5 +8,10 @@ echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwOV7xGnQ5Ft8zKGEGjS4kijY5PhzfoShWjUs
 service ssh start
 echo "SSH server has started"
 
+# Скопировать бенчмарк
+mkdir behcn
+cd bench
+wget https://raw.githubusercontent.com/Andrey36652/gpu-provider-eval/refs/heads/master/bench.py
+
 # Спать
 sleep 172800
